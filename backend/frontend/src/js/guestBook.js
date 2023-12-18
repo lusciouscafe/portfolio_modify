@@ -1,5 +1,5 @@
 async function getComment() {
-  const response = await fetch("http://localhost:5500/comment");
+  const response = await fetch("https://render.com/docs/node-version/comment");
   const jsonData = await response.json();
 
   return jsonData;
@@ -41,14 +41,17 @@ makeComment();
 /* 댓글 추가 */
 const postComment = async (param) => {
   console.log(param);
-  const res = await fetch("http://localhost:5500/createcomment", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    credentials: "include",
-    body: JSON.stringify(param),
-  });
+  const res = await fetch(
+    "https://render.com/docs/node-version/createcomment",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify(param),
+    }
+  );
   return await res.json();
 };
 

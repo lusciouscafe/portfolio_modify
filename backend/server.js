@@ -10,7 +10,7 @@ app.use(express.static("frontend"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const port = 5500;
+const port = 8080;
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/frontend/src/html/home.html");
@@ -26,7 +26,7 @@ app.get("/comment", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server is listening at localhost: 5500`);
+  console.log(`server is listening at localhost: 8080`);
 });
 
 app.post("/createcomment", (req, res) => {
