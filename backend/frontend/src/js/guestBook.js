@@ -1,5 +1,7 @@
 async function getComment() {
-  const response = await fetch("https://render.com/docs/node-version/comment");
+  const response = await fetch(
+    "https://lusciouscafe-modify.onrender.com/comment"
+  );
   const jsonData = await response.json();
 
   return jsonData;
@@ -42,7 +44,7 @@ makeComment();
 const postComment = async (param) => {
   console.log(param);
   const res = await fetch(
-    "https://render.com/docs/node-version/createcomment",
+    "https://lusciouscafe-modify.onrender.com/createcomment",
     {
       method: "POST",
       headers: {
