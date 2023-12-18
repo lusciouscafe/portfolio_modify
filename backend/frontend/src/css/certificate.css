@@ -81,12 +81,11 @@
 
 .section__nav li {
   display: block;
-  width: 320px;
+  width: 340px;
   height: 40px;
   float: left;
   padding: 5px 0px;
   padding-top: 20px;
-  margin-left: 40px;
   text-align: center;
   position: relative;
   transition: 0.3s;
