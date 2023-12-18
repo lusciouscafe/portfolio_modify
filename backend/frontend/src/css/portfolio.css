@@ -18,7 +18,7 @@
 
 .header {
   width: 100%;
-  height: 5rem;
+  height: 50px;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -33,17 +33,17 @@
 
 .header__nav__ul li {
   display: block;
-  width: 19rem;
-  height: 3rem;
+  width: 250px;
+  height: 50px;
   float: left;
   padding: 5px 0px;
   text-align: center;
   position: relative;
-  padding-top: 2rem;
+  padding-top: 30px;
 }
 
 .header__nav__ul li a {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 700;
   transition: all 0.4s;
   color: #e5e5e5;
@@ -56,14 +56,14 @@
 /* section */
 .section {
   width: 100%;
-  height: 50rem;
+  height: 800px;
   position: relative;
 }
 
 .section__h2 {
   position: absolute;
-  left: 47rem;
-  top: 9rem;
+  left: 550px;
+  top: 140px;
   font-weight: 600;
   font-size: 80px;
   color: #e5e5e5;
@@ -73,16 +73,16 @@
 }
 
 .photoshop {
-  width: 25rem;
-  height: 13rem;
+  width: 350px;
+  height: 240px;
   float: left;
-  margin-left: 10rem;
-  margin-top: 16rem;
+  margin-left: 85px;
+  margin-top: 230px;
 }
 
 .photoshop img {
-  width: 23rem;
-  height: 13rem;
+  width: 345px;
+  height: 245px;
   transition: all 0.2s linear;
 }
 .photoshop img:hover {
@@ -90,16 +90,16 @@
 }
 
 .illustrator {
-  width: 25rem;
-  height: 13rem;
+  width: 350px;
+  height: 240px;
   float: left;
-  margin-left: 10rem;
-  margin-top: 16rem;
+  margin-left: 85px;
+  margin-top: 230px;
 }
 
 .illustrator img {
-  width: 23rem;
-  height: 13rem;
+  width: 345px;
+  height: 245px;
   transition: all 0.2s linear;
 }
 .illustrator img:hover {
@@ -107,16 +107,16 @@
 }
 
 .powerpoint {
-  width: 25rem;
-  height: 13rem;
+  width: 350px;
+  height: 240px;
   float: left;
-  margin-left: 10rem;
-  margin-top: 16rem;
+  margin-left: 85px;
+  margin-top: 230px;
 }
 
 .powerpoint img {
-  width: 23rem;
-  height: 13rem;
+  width: 345px;
+  height: 245px;
   transition: all 0.2s linear;
 }
 .powerpoint img:hover {
@@ -124,16 +124,16 @@
 }
 
 .html {
-  width: 25rem;
-  height: 13rem;
+  width: 350px;
+  height: 240px;
   float: left;
-  margin-left: 10rem;
-  margin-top: 5rem;
+  margin-left: 85px;
+  margin-top: 50px;
 }
 
 .html img {
-  width: 23rem;
-  height: 13rem;
+  width: 345px;
+  height: 245px;
   transition: all 0.2s linear;
 }
 .html img:hover {
@@ -141,16 +141,16 @@
 }
 
 .css {
-  width: 25rem;
-  height: 13rem;
+  width: 350px;
+  height: 240px;
   float: left;
-  margin-left: 10rem;
-  margin-top: 5rem;
+  margin-left: 85px;
+  margin-top: 50px;
 }
 
 .css img {
-  width: 23rem;
-  height: 13rem;
+  width: 345px;
+  height: 245px;
   transition: all 0.2s linear;
 }
 .css img:hover {
@@ -158,16 +158,16 @@
 }
 
 .jabascript {
-  width: 25rem;
-  height: 13rem;
+  width: 350px;
+  height: 240px;
   float: left;
-  margin-left: 10rem;
-  margin-top: 5rem;
+  margin-left: 85px;
+  margin-top: 50px;
 }
 
 .jabascript img {
-  width: 23rem;
-  height: 13rem;
+  width: 345px;
+  height: 245px;
   transition: all 0.2s linear;
 }
 .jabascript img:hover {
@@ -177,7 +177,7 @@
 /* footer */
 .footer {
   width: 100%;
-  height: 6.5rem;
+  height: 100px;
   position: relative;
   background-color: #404040;
   color: #e5e5e5;
@@ -186,6 +186,6 @@
 .copyright {
   color: #e5e5e5;
   text-align: center;
-  padding-top: 2.5rem;
-  padding-left: 1rem;
+  padding-top: 25px;
+  padding-left: 10px;
 }

@@ -18,7 +18,7 @@
 
 .header {
   width: 100%;
-  height: 5rem;
+  height: 50px;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -40,16 +40,16 @@
 .header__nav__ul li {
   display: block;
   width: 50%;
-  height: 3rem;
+  height: 50px;
   float: left;
   padding: 5px 0px;
   text-align: center;
   position: relative;
-  padding-top: 2rem;
+  padding-top: 30px;
 }
 
 .header__nav__ul li a {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 700;
   transition: all 0.4s;
   color: #e5e5e5;
@@ -62,21 +62,23 @@
 /* section */
 .section {
   width: 100%;
-  height: 50rem;
+  height: 800px;
+  padding-top: 90px;
   position: relative;
 }
 
 .section img {
-  width: 18%;
+  width: 35%;
+  height: 25%;
   float: left;
-  padding-left: 25rem;
-  padding-top: 7rem;
+  padding-left: 140px;
+  padding-top: 10px;
 }
 
 /* footer */
 .footer {
   width: 100%;
-  height: 6.5rem;
+  height: 100px;
   position: relative;
   background-color: #404040;
   color: #e5e5e5;
@@ -85,8 +87,8 @@
 .copyright {
   color: #e5e5e5;
   text-align: center;
-  padding-top: 2.5rem;
-  padding-left: 1rem;
+  padding-top: 25px;
+  padding-left: 10px;
 }
 
 /* model */
@@ -100,7 +102,7 @@
 }
 
 .cat-body {
-  width: 50%;
+  width: 67%;
   height: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -111,7 +113,7 @@
 }
 
 .cat-body img {
-  padding-top: 5rem;
+  padding-top: 40px;
   height: 230px;
   float: left;
   margin: auto;
@@ -133,7 +135,7 @@
 }
 
 .dolphin-body {
-  width: 50%;
+  width: 67%;
   height: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -144,8 +146,8 @@
 }
 
 .dolphin-body img {
-  padding-top: 5rem;
-  height: 280px;
+  padding-top: 30px;
+  height: 270px;
   float: left;
   margin: auto;
   display: block;
@@ -166,7 +168,7 @@
 }
 
 .travel-body {
-  width: 50%;
+  width: 67%;
   height: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -177,8 +179,8 @@
 }
 
 .travel-body img {
-  padding-top: 5rem;
-  height: 280px;
+  padding-top: 30px;
+  height: 270px;
   float: left;
   margin: auto;
   display: block;
@@ -199,7 +201,7 @@
 }
 
 .winter-body {
-  width: 50%;
+  width: 67%;
   height: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -210,7 +212,7 @@
 }
 
 .winter-body img {
-  padding-top: 5rem;
+  padding-top: 40px;
   height: 230px;
   float: left;
   margin: auto;

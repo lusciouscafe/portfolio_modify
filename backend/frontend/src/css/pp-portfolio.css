@@ -18,7 +18,7 @@
 
 .header {
   width: 100%;
-  height: 5rem;
+  height: 50px;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -34,16 +34,16 @@
 .header__nav__ul li {
   display: block;
   width: 100%;
-  height: 3rem;
+  height: 50px;
   float: left;
   padding: 5px 0px;
   text-align: center;
   position: relative;
-  padding-top: 2rem;
+  padding-top: 30px;
 }
 
 .header__nav__ul li a {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 700;
   transition: all 0.4s;
   color: #e5e5e5;
@@ -56,20 +56,21 @@
 /* section */
 .section {
   width: 100%;
-  height: 50rem;
+  height: 800px;
   position: relative;
+  padding-top: 50px;
 }
 
 .section img {
-  height: 17rem;
-  padding-top: 7rem;
-  padding-left: 19rem;
+  height: 300px;
+  padding-top: 70px;
+  padding-left: 100px;
 }
 
 /* footer */
 .footer {
   width: 100%;
-  height: 6.5rem;
+  height: 100px;
   position: relative;
   background-color: #404040;
   color: #e5e5e5;
@@ -78,6 +79,6 @@
 .copyright {
   color: #e5e5e5;
   text-align: center;
-  padding-top: 2.5rem;
-  padding-left: 1rem;
+  padding-top: 25px;
+  padding-left: 10px;
 }
