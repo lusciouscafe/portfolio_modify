@@ -62,7 +62,7 @@
 
 .section__h2 {
   position: absolute;
-  left: 500px;
+  left: 520px;
   top: 140px;
   font-weight: 600;
   font-size: 80px;
@@ -86,6 +86,7 @@
   float: left;
   padding: 5px 0px;
   padding-top: 20px;
+  padding-left: 20px;
   text-align: center;
   position: relative;
   transition: 0.3s;

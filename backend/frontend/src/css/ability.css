@@ -62,7 +62,7 @@
 
 .section__h2 {
   position: absolute;
-  left: 580px;
+  left: 600px;
   top: 140px;
   font-weight: 600;
   font-size: 80px;
@@ -83,7 +83,7 @@
   width: 180px;
   height: 170px;
   padding-top: 100px;
-  padding-left: 450px;
+  padding-left: 50px;
 }
 
 /* footer */
