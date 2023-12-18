@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jabascript-portfolio</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/js-portfolio.css" />
+  </head>
+  <body>
+    <div id="js-portfolio__wrap">
+      <!-- header -->
+      <header class="header">
+        <div>
+          <nav class="header__nav">
+            <ul class="header__nav__ul">
+              <li><a href="/src/html/html-portfolio.html">HTML & CSS</a></li>
+              <li class="js">
+                <a href="/src/html/js-portfolio.html">JAVASCRIPT</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- section -->
+      <canvas id="canvas" width="512px" height="500px"></canvas><br />
+
+      <button onclick="start()">시작</button>
+      <div id="level">1 단계</div>
+      <div id="score">점수 = 0</div>
+
+      <style>
+        canvas {
+          background-color: #000000;
+          border: 1px dotted rgb(0, 0, 0);
+        }
+      </style>
+
+      <script>
+        let context; /* context 객체 */
+        let timer; /* timar 객체 변수 */
+        let t = 1; /* timar 속도 증가 */
+        let p = 1; /* 점수 증가*/
+        let score = 0; /* 점수 */
+        let level = 1; /* 단계 */
+
+        /* block */
+        function block(x, y, z) {
+          this.x = x;
+          this.y = y;
+          this.z = 1;
+        }
+
+        /* block 객체 나누기 */
+        let blockList = [];
+
+        const block_height = 37;
+        const block_width = 102;
+
+        for (let x = 2; x < 510; x += block_width) {
+          for (let y = 2; y < 190; y += block_height) {
+            blockList.push(new block(x, y, 1));
+          }
+        }
+        console.log(blockList);
+
+        /* block 그리기 */
+        function drawBlock() {
+          context.beginPath();
+          context.fillStyle = "Maroon";
+          for (const block of blockList) {
+            if (block.z == 1) {
+              context.rect(block.x, block.y, 100, 35);
+              context.fill();
+            }
+          }
+        }
+
+        /* ball */
+        let dx = 5;
+        let dy = 5;
+        let ball = {
+          x: randonNum(20, 490),
+          y: 200,
+        };
+
+        /* ball 랜덤 시작 위치 */
+        function randonNum(min, max) {
+          let randNum = Math.floor(Math.random() * (max - min + 1)) + min;
+          return randNum;
+        }
+
+        /* ball 그리기 */
+        function drawball() {
+          context.beginPath();
+          context.fillStyle = "white";
+          context.arc(ball.x, ball.y, 10, 0, Math.PI * 2, true);
+          context.closePath();
+          context.fill();
+        }
+
+        /* ball 현재 속도 위치 업데이트 */
+        function calculate() {
+          ball.x += dx;
+          ball.y += dy;
+
+          /* ball이 벽에 닿으면 */
+          if (ball.x < 0 + 15 || ball.x > 512 - 15) {
+            dx = -dx;
+          }
+          if (ball.y < 0 + 15 || ball.y > 500 - 15) {
+            dy = -dy;
+          }
+
+          /* ball이 bar에 닿으면 */
+          if (ball.x >= bar.x && ball.x <= bar.x + 130 && ball.y == bar.y) {
+            for (let i = 0; i < 25; i++) {
+              if (blockList[i] % 2 == 0) {
+                dy = -dy;
+              } else {
+                dy = -dy;
+              }
+            }
+          }
+
+          /* ball이 block에 닿으면 */
+
+          for (let i = 0; i < 25; i++) {
+            if (blockList[i].z == 1) {
+              if (
+                ball.x >= blockList[i].x &&
+                ball.x <= blockList[i].x + 102 &&
+                ball.y >= blockList[i].y &&
+                ball.y <= blockList[i].y + 32
+              ) {
+                score += p; //2단계부터 점수 추가 안됨
+                document.getElementById("score").innerHTML = "점수 = " + score;
+                dy = -dy;
+                blockList[i].z = 0;
+              }
+            }
+          }
+
+          /* ball이 바닥에 닿으면 */
+          if ((ball.x >= 0 || ball.x <= 512) && ball.y == 500 - 10) {
+            score = 0;
+            p = 1;
+            level = 1;
+            t = 1;
+
+            document.getElementById("score").innerHTML = "점수 = " + score;
+            document.getElementById("level").innerHTML = level + " 단계";
+            dy = -dy;
+            alert("게임 종료");
+
+            init();
+            clearInterval(timer);
+            drawGame();
+            return;
+          }
+
+          /*block이 다 깨졌으면*/
+          let j = 0;
+          for (let i = 0; i < 25; i++) {
+            if (blockList[i].z == 0) {
+              j += 1;
+            }
+          }
+          if (j == 25) {
+            init();
+            clearInterval(timer);
+            drawGame();
+            alert("성공");
+            p += 3;
+            t += 3;
+            timer = setInterval(calculate, 32 - t);
+            level += 1;
+            document.getElementById("level").innerHTML = level + " 단계";
+            return;
+          }
+          console.log(blockList.length);
+          drawGame();
+        }
+
+        /* bar */
+        const vx = 70;
+        let bar = {
+          x: 200,
+          y: 485,
+        };
+
+        /* bar 그리기 */
+        function drawbar() {
+          context.beginPath();
+          context.fillStyle = "Maroon";
+          context.rect(bar.x, bar.y, 130, 15);
+          context.closePath();
+          context.fill();
+        }
+
+        /* bar 움직이기 */
+
+        document.addEventListener("keyup", (event) => {
+          movebar(event);
+        });
+
+        if (KeyboardEvent == "keyup") {
+          console.log("left");
+        }
+
+        function movebar(event) {
+          switch (event.key) {
+            case "ArrowLeft":
+              if (bar.x >= 35) {
+                bar.x -= vx;
+              }
+
+              break;
+            case "ArrowRight":
+              if (bar.x <= 512 - 130) {
+                bar.x += vx;
+              }
+              break;
+            default:
+              bar.x(event.key, event.keyCode);
+              return;
+          }
+          event.preventDefault();
+        }
+
+        /* 전체 화면 그리기 */
+        function drawGame() {
+          context.clearRect(0, 0, 512, 500);
+          drawBlock();
+          drawball();
+          drawbar();
+        }
+
+        /* 초기화 */
+        function init() {
+          context = document.getElementById("canvas").getContext("2d");
+
+          /* bar 초기화 */
+          bar = {
+            x: 200,
+            y: 485,
+          };
+
+          /* ball 초기화 */
+          ball = {
+            x: randonNum(20, 490),
+            y: 200,
+          };
+
+          /* block 초기화 */
+          blockList = [];
+
+          for (let x = 2; x < 510; x += block_width) {
+            for (let y = 2; y < 160; y += block_height) {
+              blockList.push(new block(x, y, 1));
+            }
+          }
+          console.log(blockList);
+        }
+
+        /* 시작 버튼 누르면 호출 */
+        function start() {
+          init();
+          drawGame();
+          timer = setInterval(calculate, 32);
+          return false;
+        }
+      </script>
+
+      <!-- footer -->
+      <footer class="footer">
+        <div class="copyright">
+          이 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로
+          제작되었습니다.<br />
+          © 2023 Gu, Bo-Gyeong<br />
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

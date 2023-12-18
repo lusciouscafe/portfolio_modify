@@ -1,0 +1,24 @@
+/* tab */
+$(document).ready(function(){
+    $(".drink-button").click(function(){
+        $(".drink").show();
+    });
+    $(".drink-button").click(function(){
+        $(".drink").hide();
+        $(".newmenu").hide();
+    });
+    $(".bakery-button").click(function(){
+        $(".bakery").show();
+    });
+    $(".bakery-button").click(function(){
+        $(".drink").hide();
+        $(".newmenu").hide();
+    });
+    $(".newmenu-button").click(function(){
+        $(".newmenu").show();
+    });
+    $(".newmenu-button").click(function(){
+        $(".drink").hide();
+        $(".bakery").hide();
+    });
+});
